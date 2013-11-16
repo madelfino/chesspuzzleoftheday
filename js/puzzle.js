@@ -37,9 +37,9 @@ var onDrop = function(source, target) {
 
     move_num++;
     if (move_num >= puzzle.moves.length) {
-        $('#msg').text('Solved!');
+        statusMsg = 'Solved!';
     } else {
-        $('#msg').text('');
+        statusMsg = '';
         var next_move = puzzle.moves[move_num];
         board.move(next_move);
         move = game.move({
