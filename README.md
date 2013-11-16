@@ -1,0 +1,4 @@
+chesspuzzleoftheday
+===================
+
+www.chesspuzzleoftheday.com
