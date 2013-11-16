@@ -6,8 +6,7 @@ var puzzle_num = puzzles.length - 1,
 
 var board,
     game = new Chess(puzzle.start),
-    statusMsg = '',
-    statusEl = $('#msg');
+    statusMsg = '';
 
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
@@ -59,8 +58,9 @@ var onSnapEnd = function() {
 };
 
 var updateStatus = function() {
+    $('#date').text(puzzle.date);
     $('#title').text(puzzle.title);
-    statusEl.html(statusMsg);
+    $('#msg').text(statusMsg);
 };
 
 var cfg = {
