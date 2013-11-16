@@ -1,14 +1,14 @@
 var puzzles = [
     {
         title: 'Mate in one - White to move',
-        start:'3q1rk1/5pbp/5Qp1/8/8/2B5/5PPP/6K1 w - - 0 1',
+        start: '3q1rk1/5pbp/5Qp1/8/8/2B5/5PPP/6K1 w - - 0 1',
         moves: [
             'f6-g7'
         ]
     },
     {
         title: 'Mate in two - White to move',
-        start:'1Q6/8/8/8/8/k2K4/8/8 w - - 0 1',
+        start: '1Q6/8/8/8/8/k2K4/8/8 w - - 0 1',
         moves: [
             'd3-c3',
             'a3-a4',
@@ -17,7 +17,7 @@ var puzzles = [
     },
     {
         title: 'Mate in two - White to move',
-        start:'r1bq4/pppn2R1/3p1n2/4P2p/3P2pk/3Q4/PPP3P1/R6K w - - 0 1',
+        start: 'r1bq4/pppn2R1/3p1n2/4P2p/3P2pk/3Q4/PPP3P1/R6K w - - 0 1',
         moves: [
             'd3-h3',
             'g4-h3',
@@ -31,6 +31,17 @@ var puzzles = [
             'd4-d1',
             'c1-d1',
             'h6-e3'
+        ]
+    },
+    {
+        title: 'Mate in three - Black to move',
+        start: '6k1/1p5p/3p1rp1/P2Pbn2/1PB4P/3Q1q2/4R3/4B1K1 b - - 0 1',
+        moves: [
+            'f3-f1',
+            'g1-f1',
+            'f5-e3',
+            'f1-g1',
+            'f6-f1'
         ]
     }
 ];
