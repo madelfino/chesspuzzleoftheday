@@ -1,13 +1,13 @@
 var init = function() {
 
-var puzzle_num = 0,
+var puzzle_num = puzzles.length - 1,
     move_num = 0,
     puzzle = puzzles[puzzle_num];
 
-//--- start example JS ---
 var board,
     game = new Chess(puzzle.start),
-    statusEl = $('#status');
+    statusMsg = '',
+    statusEl = $('#msg');
 
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
@@ -59,35 +59,8 @@ var onSnapEnd = function() {
 };
 
 var updateStatus = function() {
-    var status = '';
-
-    var moveColor = 'White';
-    if (game.turn() === 'b') {
-        moveColor = 'Black';
-    }
-
-    // checkmate?
-    if (game.in_checkmate() === true) {
-        status = 'Game over, ' + moveColor + ' is in checkmate.';
-    }
-
-    // draw?
-    else if (game.in_draw() === true) {
-        status = 'Game over, drawn position';
-    }
-
-    // game still on
-    else {
-        status = moveColor + ' to move';
-
-        // check?
-        if (game.in_check() === true) {
-        status += ', ' + moveColor + ' is in check';
-        }
-    }
-
     $('#title').text(puzzle.title);
-    statusEl.html(status);
+    statusEl.html(statusMsg);
 };
 
 var cfg = {
@@ -100,7 +73,6 @@ var cfg = {
 board = new ChessBoard('board', cfg);
 
 updateStatus();
-//--- end example JS ---
 
 function load_puzzle(num) {
     move_num = 0;
@@ -109,7 +81,7 @@ function load_puzzle(num) {
     puzzle = puzzles[puzzle_num];
     game.load(puzzle.start);
     board.position(game.fen(), false);
-    $('#msg').text('');
+    statusMsg = '';
     updateStatus();
 }
 
