@@ -48,5 +48,17 @@ var puzzles = [
             'f1-g1',
             'f6-f1'
         ]
+    },
+    {
+        date: '11/17/13',
+        title: 'Mate in three - White to move',
+        start: '7k/7p/4b3/4b2q/8/2B5/5Q1P/7K w - - 0 1',
+        moves: [
+            'f2-f8',
+            'e6-g8',
+            'f8-f6',
+            'e5-f6',
+            'c3-f6'
+        ]
     }
 ];
