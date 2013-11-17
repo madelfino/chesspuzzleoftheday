@@ -1,12 +1,19 @@
 var init = function() {
 
 var puzzle_num = puzzles.length - 1,
+    puzzle = puzzles[puzzle_num],
     move_num = 0,
-    puzzle = puzzles[puzzle_num];
-
-var board,
+    board,
     game = new Chess(puzzle.start),
-    statusMsg = '';
+    statusMsg = '',
+    timeouts = [];
+
+function clearTimeouts() {
+    for (var i=0; i<timeouts.length; i++) {
+        clearTimeout(timeouts[i]);
+    }
+    timeouts = [];
+}
 
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
@@ -21,6 +28,7 @@ var onDragStart = function(source, piece, position, orientation) {
 var onDrop = function(source, target) {
     // see if the move is legal
     correct_move = puzzle.moves[move_num];
+    if (source == target) return 'snapback';
     if (correct_move.indexOf(source) != 0 || correct_move.indexOf(target) != 3) {
         $('#msg').text('Incorrect');
         return 'snapback';
@@ -29,6 +37,7 @@ var onDrop = function(source, target) {
         from: source,
         to: target,
         promotion: 'q' // NOTE: always promote to a pawn for example simplicity
+        //TODO: Fix this once I add a puzzle that involves promoting
     });
 
     // illegal move
@@ -61,10 +70,12 @@ var updateStatus = function() {
     $('#date').text(puzzle.date);
     $('#title').text(puzzle.title);
     $('#msg').text(statusMsg);
+    if (statusMsg == 'Solved!') $('#solve').hide();
 };
 
 var cfg = {
     draggable: true,
+    showNotation: false,
     position: game.fen(),
     onDragStart: onDragStart,
     onDrop: onDrop,
@@ -75,6 +86,7 @@ board = new ChessBoard('board', cfg);
 updateStatus();
 
 function load_puzzle(num) {
+    clearTimeouts();
     move_num = 0;
     puzzle_num = num % puzzles.length;
     if (num < 0) puzzle_num = puzzles.length - 1;
@@ -82,6 +94,7 @@ function load_puzzle(num) {
     game.load(puzzle.start);
     board.position(game.fen(), false);
     statusMsg = '';
+    $('#solve').show();
     updateStatus();
 }
 
@@ -91,6 +104,28 @@ $('#prev').click(function() {
 
 $('#next').click(function() {
     load_puzzle(puzzle_num + 1);
+});
+
+$('#solve').click(function() {
+    $('#msg').text('');
+    (function() {
+        next_move();
+        function next_move() {
+            if (move_num >= puzzle.moves.length) {
+                $('#msg').text('Solved!');
+                return;
+            }
+            board.move(puzzle.moves[move_num]);
+            var move = game.move({
+                from: puzzle.moves[move_num].substr(0,2),
+                to: puzzle.moves[move_num].substr(3,2),
+                promotion: 'q'
+            });
+            move_num++;
+            timeouts.push(setTimeout(next_move, 1000));
+        }
+    })();
+    $('#solve').hide();
 });
 
 }; // end init()
