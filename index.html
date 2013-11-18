@@ -15,7 +15,32 @@
     <table cellpadding="10"><tr><td><div id="prev">Prev</div></td><td><div id="board" style="width: 350px"></div></td><td><div id="next">Next</div></td></tr></table>
     <div id="msg"></div>
     <button id="solve">Show solution</button>
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
     </center>
+
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+            appId      : '1433776330175554',                        // App ID from the app dashboard
+            channelUrl : '//www.chesspuzzleoftheday.com/channel.html', // Channel file for x-domain comms
+            status     : true,                                 // Check Facebook Login status
+            xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+        };
+
+        // Load the SDK asynchronously
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     
     <script src="js/json3.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
