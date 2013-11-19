@@ -73,5 +73,18 @@ var puzzles = [
             'g7-h6',
             'f7-h7'
         ]
+    },
+    {
+        date: '11/19/13',
+        description: 'Anand vs Vassily Ivanchuk, Monte Carlo, 2004',
+        title: 'White to move',
+        start: 'r7/P1q2p1k/6p1/R6p/3Qp2P/6P1/5P1K/8 w - - 0 1',
+        moves: [
+            'a5-h5',
+            'g6-h5',
+            'd4-e4',
+            'h7-h6',
+            'e4-a8'
+        ]
     }
 ];
