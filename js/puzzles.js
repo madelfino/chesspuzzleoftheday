@@ -86,5 +86,20 @@ var puzzles = [
             'h7-h6',
             'e4-a8'
         ]
+    },
+    {
+        date: '11/20/13',
+        description: 'E Chukaev vs Tal, Tbilisi, 1956',
+        title: 'Mate in four - Black to move',
+        start: '4r1k1/5pbp/3p2p1/1ppP4/pqP5/R4B2/1PQ3PP/1K6 b - - 0 1',
+        moves: [
+            'e8-e1',
+            'f3-d1',
+            'e1-d1',
+            'b1-a2',
+            'b4-a3',
+            'b2-a3',
+            'd1-a1'
+        ]
     }
 ];
