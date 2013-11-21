@@ -4,21 +4,35 @@
     <meta charset="utf-8">
     <meta name="description" content="New chess puzzles added daily!">
     <title>Chess Puzzle of the Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="http://chesspuzzleoftheday.com/bN.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/chessboard.css" />
     <link rel="stylesheet" href="css/puzzle.css" />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 </head>
 <body>
-    <center>
-    <h2>Chess Puzzle of the Day</h2>
-    <div id="date"></div>
-    <div id="description"></div>
-    <div id="title"></div>
-    <table cellpadding="10"><tr><td><div id="prev">Prev</div></td><td><div id="board" style="width: 350px"></div></td><td><div id="next">Next</div></td></tr></table>
-    <div id="msg"></div>
-
-    <div id="button_row"><button id="solve">Show solution</button></div>
+    <header>
+        <center>
+        <h2>Chess Puzzle of the Day</h2>
+        <div id="date"></div>
+        <div id="description"></div>
+        <div id="title"></div>
+        </center>
+    </header>
+    <div id="content">
+        <table align="center" cellpadding="10">
+            <tr>
+                <td><div id="first"><span class="glyphicon glyphicon-fast-backward btn-lg"></span></div></td>
+                <td><div id="prev"><span class="glyphicon glyphicon-backward btn-lg"></span></div></td>
+                <td><div id="board" style="width: 350px"></div></td>
+                <td><div id="next"><span class="glyphicon glyphicon-forward btn-lg"></span></div></td>
+                <td><div id="last"><span class="glyphicon glyphicon-fast-forward btn-lg"></span></div></td>
+            </tr>
+        </table>
+        <div id="msg"></div>
+    </div>
+    <div id="button_row"><button id="solve" class="btn btn-default"><span class="glyphicon glyphicon-flag"></span> Show solution </button></div>
     <div class="fb-comments" data-href="http://chesspuzzleoftheday.com" data-numposts="5"></div>
     </center>
     <footer>
@@ -61,6 +75,7 @@
     <script src="js/json3.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/chessboard.js"></script>
     <script src="js/chess.js"></script>
     <script src="js/puzzles.js"></script>
