@@ -3,6 +3,24 @@
     cursor: pointer;
 }
 
+header
+{
+    display: block;
+    height: 120px;
+}
+
+#content
+{
+    display: block;
+    height: 400px;
+}
+
+#button_row
+{
+    display: block;
+    height: 40px;
+}
+
 body
 {
     text-align: center;
