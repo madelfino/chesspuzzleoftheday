@@ -101,5 +101,40 @@ var puzzles = [
             'b2-a3',
             'd1-a1'
         ]
+    },
+    {
+        date: '11/21/13',
+        description: 'Composed by Josef Kling 1851',
+        title: 'Mate in fourteen - White to move',
+        start: 'kq4n1/4p2Q/1P2P3/1K6/8/8/p7/8 w - - 0 1',
+        moves: [
+            'h7-e4',
+            'b8-b7',
+            'e4-a4',
+            'a8-b8',
+            'a4-f4',
+            'b8-a8',
+            'f4-f8',
+            'b7-b8',
+            'f8-f3',
+            'b8-b7',
+            'f3-a3',
+            'a8-b8',
+            'a3-g3',
+            'b8-a8',
+            'g3-g8',
+            'b7-b8',
+            'g8-g2',
+            'b8-b7',
+            'g2-a2',
+            'a8-b8',
+            'a2-h2',
+            'b8-a8',
+            'h2-h8',
+            'b7-b8',
+            'h8-a1',
+            'a8-b7',
+            'a1-a6'
+        ]
     }
 ];
