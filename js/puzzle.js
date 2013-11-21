@@ -1,12 +1,16 @@
 var init = function() {
 
-var puzzle_num = puzzles.length - 1,
-    puzzle = puzzles[puzzle_num],
+var puzzle,
     move_num = 0,
     board,
-    game = new Chess(puzzle.start),
+    game,
     statusMsg = '',
-    timeouts = [];
+    timeouts = [],
+    puzzle_num = parseInt($(location).attr('search').substr(1));
+
+if (isNaN(puzzle_num) || puzzle_num < 0 || puzzle_num >= puzzles.length) puzzle_num = puzzles.length - 1;
+puzzle = puzzles[puzzle_num];
+game = new Chess(puzzle.start);
 
 function clearTimeouts() {
     for (var i=0; i<timeouts.length; i++) {
