@@ -91,10 +91,12 @@ board = new ChessBoard('board', cfg);
 updateStatus();
 
 function load_puzzle(num) {
+    
     clearTimeouts();
     move_num = 0;
-    puzzle_num = num % puzzles.length;
-    if (num < 0) puzzle_num = puzzles.length - 1;
+    puzzle_num = num;
+    if (num < 0) puzzle_num = 0;
+    if (num >= puzzles.length) puzzle_num = puzzles.length - 1;
     puzzle = puzzles[puzzle_num];
     game.load(puzzle.start);
     board.position(game.fen(), false);
@@ -103,12 +105,20 @@ function load_puzzle(num) {
     updateStatus();
 }
 
+$('#first').click(function() {
+    load_puzzle(0);
+});
+
 $('#prev').click(function() {
     load_puzzle(puzzle_num - 1);
 });
 
 $('#next').click(function() {
     load_puzzle(puzzle_num + 1);
+});
+
+$('#last').click(function() {
+    load_puzzle(puzzles.length - 1);
 });
 
 $('#solve').click(function() {
