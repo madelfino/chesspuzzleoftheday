@@ -136,5 +136,16 @@ var puzzles = [
             'a8-b7',
             'a1-a6'
         ]
+    },
+    {
+        date: '11/22/13',
+        description: 'Tal v Botvinnik World Championship Match (1960)',
+        title: 'White to play and win',
+        start: '2r5/kp1r1pp1/pR2pnp1/2Pq4/3P4/1Q6/4N1PP/1R4K1 w - - 0 1',
+        moves: [
+            'b6-a6',
+            'a7-b8',
+            'b3-a4'
+        ]
     }
 ];
