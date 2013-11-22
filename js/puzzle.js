@@ -24,7 +24,8 @@ function clearTimeouts() {
 var onDragStart = function(source, piece, position, orientation) {
     if (game.game_over() === true ||
         (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-        (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+        (game.turn() === 'b' && piece.search(/^w/) !== -1) ||
+        move_num >= puzzle.moves.length) {
     return false;
     }
 };
