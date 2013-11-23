@@ -138,6 +138,7 @@ $('#solve').click(function() {
                 promotion: 'q'
             });
             move_num++;
+            board.position(game.fen());
             timeouts.push(setTimeout(next_move, 1000));
         }
     })();

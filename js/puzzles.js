@@ -147,5 +147,17 @@ var puzzles = [
             'a7-b8',
             'b3-a4'
         ]
+    },
+    {
+        date: '11/23/13',
+        title: 'White to move',
+        start: 'k7/1p6/PP1K4/8/8/8/8/8 w - - 0 1',
+        moves: [
+            'd6-c7',
+            'b7-a6',
+            'b6-b7',
+            'a8-a7',
+            'b7-b8'
+        ]
     }
 ];
