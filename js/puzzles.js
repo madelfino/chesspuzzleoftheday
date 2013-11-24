@@ -159,5 +159,22 @@ var puzzles = [
             'a8-a7',
             'b7-b8'
         ]
+    },
+    {
+        date: '11/24/13',
+        description: 'Kramnik vs Jaan Ehlvest, Riga, 1995',
+        title: 'Mate in five - White to move',
+        start: '3k3r/p1rb1p2/5P1b/q1p3B1/1pp1Q3/6P1/PP3P1P/2KRR3 w - - 0 1',
+        moves: [
+            'e4-a8',
+            'c7-c8',
+            'd1-d7',
+            'd8-d7',
+            'a8-d5',
+            'd7-c7',
+            'e1-e7',
+            'c7-b6',
+            'd5-b7'
+        ]
     }
 ];
