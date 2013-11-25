@@ -176,5 +176,13 @@ var puzzles = [
             'c7-b6',
             'd5-b7'
         ]
+    },
+    {
+        date: '11/25/13',
+        title: 'Mate in one - White to move',
+        start: 'rnb1r1kb/pppq1p2/4p2p/2B4P/6N1/2NP4/PPPQ1P2/R5RK w - - 0 1',
+        moves: [
+            'g4-f6'
+        ]
     }
 ];
