@@ -184,5 +184,17 @@ var puzzles = [
         moves: [
             'g4-f6'
         ]
+    },
+    {
+        date: '11/26/13',
+        description: 'Carlsen vs Vugar Gashimov, Moscow, 2009',
+        title: 'Mate in two - White to move',
+        start: '8/p3rpk1/4nN1p/2pR1Q2/8/Pq4P1/4PP1P/6K1 w - - 0 1',
+        moves: [
+            'f5-h7',
+            'g7-f6',
+            'd5-f5'
+        ],
+        annotation: 'Alternatively - Qh7+ Kf8 Qg8#'
     }
 ];
