@@ -51,6 +51,9 @@ var onDrop = function(source, target) {
     move_num++;
     if (move_num >= puzzle.moves.length) {
         statusMsg = 'Solved!';
+        if (puzzle.annotation) {
+            statusMsg += '<br>' + puzzle.annotation;
+        }
     } else {
         statusMsg = '';
         var next_move = puzzle.moves[move_num];
@@ -75,8 +78,8 @@ var updateStatus = function() {
     $('#date').text(puzzle.date);
     if (typeof(puzzle.description) !== 'undefined') $('#description').text(puzzle.description); else $('#description').text('');
     $('#title').text(puzzle.title);
-    $('#msg').text(statusMsg);
-    if (statusMsg == 'Solved!') $('#solve').hide();
+    $('#msg').html(statusMsg);
+    if (statusMsg.indexOf('Solved!') == 0) $('#solve').hide();
 };
 
 var cfg = {
@@ -128,7 +131,11 @@ $('#solve').click(function() {
         next_move();
         function next_move() {
             if (move_num >= puzzle.moves.length) {
-                $('#msg').text('Solved!');
+                statusMsg = 'Solved!';
+                if (puzzle.annotation) {
+                    statusMsg += '<br>' + puzzle.annotation;
+                }
+                updateStatus();
                 return;
             }
             board.move(puzzle.moves[move_num]);
