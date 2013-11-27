@@ -196,5 +196,17 @@ var puzzles = [
             'd5-f5'
         ],
         annotation: 'Alternatively - Qh7+ Kf8 Qg8#'
+    },
+    {
+        date: '11/27/13',
+        title: 'Mate in three - Black to move',
+        start: '2k4r/ppp3pp/7r/4n3/8/1BP5/PP2bPPP/RN2R1K1 b - - 0 1',
+        moves: [
+            'e5-f3',
+            'g2-f3',
+            'h6-g6',
+            'g1-h1',
+            'e2-f3'
+        ]
     }
 ];
