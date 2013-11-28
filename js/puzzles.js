@@ -208,5 +208,19 @@ var puzzles = [
             'g1-h1',
             'e2-f3'
         ]
+    },
+    {
+        date: '11/28/13',
+        description: '<a href="http://www.chess.com/livechess/game?id=657507534">michaeldelfino vs ColonelKnight, chess.com, 2013</a>',
+        title: 'White to move and gain advantage',
+        start: 'r4rk1/1pp2ppp/1pbp4/4qN1n/4PR2/2NP2Q1/PPP3PP/5RK1 w - - 0 1',
+        moves: [
+            'f5-h6',
+            'g8-h8',
+            'h6-f7',
+            'f8-f7',
+            'f4-f7'
+        ],
+        annotation: 'Happy Thanksgiving!'
     }
 ];
