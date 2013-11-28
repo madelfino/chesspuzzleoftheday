@@ -76,7 +76,7 @@ var onSnapEnd = function() {
 
 var updateStatus = function() {
     $('#date').text(puzzle.date);
-    if (typeof(puzzle.description) !== 'undefined') $('#description').text(puzzle.description); else $('#description').text('');
+    if (typeof(puzzle.description) !== 'undefined') $('#description').html(puzzle.description); else $('#description').html('');
     $('#title').text(puzzle.title);
     $('#msg').html(statusMsg);
     if (statusMsg.indexOf('Solved!') == 0) $('#solve').hide();
