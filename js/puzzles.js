@@ -222,5 +222,64 @@ var puzzles = [
             'f4-f7'
         ],
         annotation: 'Happy Thanksgiving!'
+    },
+    {
+        date: '11/29/13',
+        title: 'Mate in one - White to move',
+        start: '8/1b6/2kp4/2pN4/4P1r1/8/2BK4/8 w - - 0 1',
+        moves: [
+            'c2-a4'
+        ]
+    },
+    {
+        date: '11/30/13',
+        title: 'Mate in two - White to move',
+        start: 'rnbk2r1/pppp1pBp/2q5/8/2B3Q1/8/P5PP/R3R1K1 w - - 0 1',
+        moves: [
+            'g7-f6',
+            'c6-f6',
+            'g4-g8'
+        ]
+    },
+    {
+        date: '12/1/13',
+        title: 'Mate in three - Black to move',
+        start: 'r3k2r/ppp2N2/3p1n2/4p3/2B1P1b1/3P3P/PPP1nbP1/RN5K b - - 0 1',
+        moves: [
+            'h8-h3',
+            'g2-h3',
+            'g4-f3',
+            'h1-h2',
+            'f2-g1'
+        ]
+    },
+    {
+        date: '12/2/13',
+        description: 'J. Polgar vs P. Benko, Aruba 1992',
+        title: 'Find the best move - White to move',
+        start: 'r3nqk1/1p1b4/p3ppp1/4B3/P2P1Q2/2P1R3/2B2PP1/6K1 w - - 0 1',
+        moves: [
+            'c2-g6',
+            'f8-g7',
+            'e3-g3',
+            'f6-e5',
+            'd4-e5'
+        ],
+        annotation: '+-'
+    },
+    {
+        date: '12/3/13',
+        description: 'Vladimir Kramnik vs Kasparov, Moscow, 2001',
+        title: 'Mate in four - Black to move',
+        start: '8/5p1k/4r1p1/2PP1p2/1Q6/1p3bbP/1B2pqP1/R5RK b - - 0 1',
+        moves: [
+            'f3-g2',
+            'g1-g2',
+            'f2-f1',
+            'a1-f1',
+            'e2-f1',
+            'g2-g1',
+            'f1-h3' 
+        ]
     }
 ];
