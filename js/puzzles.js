@@ -303,5 +303,18 @@ var puzzles = [
             'g6-g7'
         ],
         annotation: 'If Kh8, Qh7#'
+    },
+    {
+        date: '12/5/13',
+        description: 'Keres vs Verbak, corr., 1932',
+        title: 'Mate in three - White to move',
+        start: 'rnbq1b1r/pp4kp/5np1/4p2Q/2BN1R2/4B3/PPPN2PP/R5K1 w - - 0 1',
+        moves: [
+            'h5-h6',
+            'g7-h6',
+            'f4-h4',
+            'h6-g7',
+            'e3-h6'
+        ]
     }
 ];
