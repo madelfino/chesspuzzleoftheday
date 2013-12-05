@@ -281,5 +281,27 @@ var puzzles = [
             'g2-g1',
             'f1-h3' 
         ]
+    },
+    {
+        date: '12/4/13',
+        description: 'Svidler vs Konstantin Chernyshov, Voronezh, 2003',
+        title: 'Mate in seven - White to move',
+        start: '2r3kr/p2R2b1/6pp/1pB5/2q3p1/4Q3/PP3P1P/3R2K1 w - - 0 1',
+        moves: [
+            'e3-e7',
+            'g7-f8',
+            'e7-f6',
+            'h8-h7',
+            'd7-h7',
+            'g8-h7',
+            'd1-d7',
+            'c4-f7',
+            'd7-f7',
+            'h7-g8',
+            'f6-g6',
+            'f8-g7',
+            'g6-g7'
+        ],
+        annotation: 'If Kh8, Qh7#'
     }
 ];
