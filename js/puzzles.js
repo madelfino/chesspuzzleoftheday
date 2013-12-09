@@ -316,5 +316,19 @@ var puzzles = [
             'h6-g7',
             'e3-h6'
         ]
+    },
+    {
+        date: '12/6/13',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1018910">Anderssen vs Lionel Kieseritzky, London, 1851</a>',
+        title: 'Mate in three - White to move',
+        start: 'r1b1k1nr/p2p1ppp/n2B4/1p1NPN1P/6P1/3P1Q2/P1P1K3/q5b1 w - - 0 1',
+        moves: [
+            'f5-g7',
+            'e8-d8',
+            'f3-f6',
+            'g8-f6',
+            'd6-e7'
+        ],
+        annotation: 'This comes from "The Immortal Game"'
     }
 ];
