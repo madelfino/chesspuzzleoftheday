@@ -343,5 +343,20 @@ var puzzles = [
             'h7-g7',
             'h3-h6'
         ]
+    },
+    {
+        date: '12/8/13',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1397589">Aronian vs Stefan Kindermann, Germany, 2004</a>',
+        title: 'Mate in four - White to move',
+        start: '3r2r1/4q1Bp/4k3/nBP2p1Q/P3p2P/4P1R1/8/4K3 w - - 0 1',
+        moves: [
+            'g3-g6',
+            'h7-g6',
+            'h5-g6',
+            'e6-d5',
+            'g6-f5',
+            'e7-e5',
+            'f5-e5'
+        ]
     }
 ];
