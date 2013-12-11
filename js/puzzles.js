@@ -330,5 +330,18 @@ var puzzles = [
             'd6-e7'
         ],
         annotation: 'This comes from "The Immortal Game"'
+    },
+    {
+        date: '12/7/13',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1470998">Jose Raul Capablanca vs Guillermo Vassaux, Buenos Aires, 1939</a>',
+        title: 'Mate in three - White to move',
+        start: 'r3br1k/pp5p/4B1p1/4NpP1/P2Pn3/q1PQ3R/7P/3R2K1 w - - 0 1',
+        moves: [
+            'h3-h7',
+            'h8-h7',
+            'd3-h3',
+            'h7-g7',
+            'h3-h6'
+        ]
     }
 ];
