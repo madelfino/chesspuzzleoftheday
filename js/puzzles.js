@@ -358,5 +358,25 @@ var puzzles = [
             'e7-e5',
             'f5-e5'
         ]
+    },
+    {
+        date: '12/9/13',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1043727">Fine vs Beckhardt, New York, 1933</a>',
+        title: 'Mate in six - White to move',
+        start: '2kr1n1r/p4p1p/1p1p1Pp1/2pPp3/4P3/2P1n1Pq/P3Q2P/1R3RKN w - - 0 1',
+        moves: [
+            'e2-a6',
+            'c8-b8',
+            'b1-b6',
+            'a7-b6',
+            'a6-b6',
+            'b8-a8',
+            'b6-a6',
+            'a8-b8',
+            'f1-b1',
+            'b8-c7',
+            'a6-b7'
+        ],
+        annotation: 'If Kc8, then Qc6+ Kb8 Rb1+ Ka7 Qb7#' 
     }
 ];
