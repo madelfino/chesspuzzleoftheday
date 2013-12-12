@@ -413,5 +413,16 @@ var puzzles = [
             'g4-e2'
         ],
         annotation: 'A couple alternate lines here, can you find them?'
+    },
+    {
+        date: '12/12/13',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1067573">Karpov vs Chilnov, Riga, 1970</a>',
+        title: 'White to play and win',
+        start: '3r3Q/pq1k1b2/2pn4/P4p2/1P2P2P/2B5/6B1/3R3K w - - 0 1',
+        moves: [
+            'd1-d6',
+            'd7-d6',
+            'h8-d8'
+        ]
     }
 ];
