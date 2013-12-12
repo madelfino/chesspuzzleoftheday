@@ -378,5 +378,40 @@ var puzzles = [
             'a6-b7'
         ],
         annotation: 'If Kc8, then Qc6+ Kb8 Rb1+ Ka7 Qb7#' 
+    },
+    {
+        date: '12/10/13',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1462714">Yehuda Gruenfeld vs Samuel Reshevsky, New York, 1986</a>',
+        title: 'Mate in three - White to move',
+        start: '8/R4R1p/4p1p1/r3p3/1b2PnkP/6P1/5PK1/8 w - - 0 1',
+        moves: [
+            'f7-f4',
+            'e5-f4',
+            'f2-f3',
+            'g4-h5',
+            'a7-h7'
+        ]
+    },
+    {
+        date: '12/11/13',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1053155">Theo Van Scheltinga vs Gruenfeld, 1936</a>',
+        title: 'Mate in seven - Black to move',
+        start: '6rr/R4p2/4pk2/1p5q/2pP4/5P2/1P3KPP/3QR3 b - - 0 1',
+        moves: [
+            'g8-g2',
+            'f2-e3',
+            'h5-g5',
+            'f3-f4',
+            'h8-h3',
+            'd1-f3',
+            'h3-f3',
+            'e3-f3',
+            'g5-g4',
+            'f3-e4',
+            'g2-e2',
+            'e1-e2',
+            'g4-e2'
+        ],
+        annotation: 'A couple alternate lines here, can you find them?'
     }
 ];
