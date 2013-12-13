@@ -424,5 +424,20 @@ var puzzles = [
             'd7-d6',
             'h8-d8'
         ]
+    },
+    {
+        date: '12/13/11',
+        description: '<a href="http://www.chessgames.com/perl/chessgame?gid=1075577">Lewis Elkin vs Morphy, New York, 1857</a>',
+        title: 'Mate in four - Black to move',
+        start: '4r1k1/ppp2p1p/8/3Pr3/5Q1P/5P1q/PPP3p1/R2KR3 b - - 0 1',
+        moves: [
+            'e5-d5',
+            'f4-d2',
+            'e8-e1',
+            'd1-e1',
+            'g2-g1',
+            'e1-e2',
+            'h3-g2'
+        ]
     }
 ];
