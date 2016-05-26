@@ -3,8 +3,8 @@
 <head profile="http://www.w3.org/2005/10/profile">
     <meta charset="utf-8">
     <meta name="description" content="New chess puzzles added daily!">
-    <title>Chess Puzzle of the Day</title>
-    <link rel="icon" type="image/png" href="http://chesspuzzleoftheday.com/bN.png">
+    <title>Chess IQ</title>
+    <link rel="icon" type="image/png" href="bN.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/chessboard.css" />
     <link rel="stylesheet" href="css/puzzle.css" />
@@ -13,63 +13,28 @@
 <body>
     <header>
         <center>
-        <h2>Chess Puzzle of the Day</h2>
-        <h3 id="date"></h3>
+        <h2>Test Your Chess I.Q.</h2>
+        <h3 id="pnumber"></h3>
+        <div id="players"></div>
+        <div id="match"></div><br />
         <div id="description"></div>
-        <div id="title"></div>
         </center>
     </header>
     <div id="content">
         <table align="center" cellpadding="10">
             <tr>
-                <td><div id="first"><span class="glyphicon glyphicon-fast-backward btn-lg" style="width:100%"></span></div></td>
-                <td><div id="prev"><span class="glyphicon glyphicon-backward btn-lg" style="width:100%"></span></div></td>
                 <td><div id="board" style="width: 350px"></div></td>
-                <td><div id="next"><span class="glyphicon glyphicon-forward btn-lg" style="width:100%"></span></div></td>
-                <td><div id="last"><span class="glyphicon glyphicon-fast-forward btn-lg" style="width:100%"></span></div></td>
             </tr>
         </table>
         <div id="msg"></div>
     </div>
-    <div id="button_row"><button id="solve" class="btn btn-default"><span class="glyphicon glyphicon-flag"></span> Show solution </button></div>
-    <div class="fb-comments" data-href="http://chesspuzzleoftheday.com" data-numposts="5"></div>
+    <div id="button_row">
+        <button id="move1" class="btn btn-default"> A </button>
+        <button id="move2" class="btn btn-default"> B </button>
+        <button id="move3" class="btn btn-default"> C </button>
+    </div>
+    <div id="moves"></div>
     </center>
-    <footer>
-        <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
-    </footer>
-    <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function() {
-        // init the FB JS SDK
-        FB.init({
-            appId      : '1433776330175554',                        // App ID from the app dashboard
-            channelUrl : '//www.chesspuzzleoftheday.com/channel.html', // Channel file for x-domain comms
-            status     : true,                                 // Check Facebook Login status
-            xfbml      : true                                  // Look for social plugins on the page
-        });
-
-        // Additional initialization code such as adding Event Listeners goes here
-        };
-
-        // Load the SDK asynchronously
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-45785986-1', 'chesspuzzleoftheday.com');
-        ga('send', 'pageview');
-    </script>
     
     <script src="js/json3.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>

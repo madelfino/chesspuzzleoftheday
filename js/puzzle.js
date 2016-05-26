@@ -1,156 +1,66 @@
 var init = function() {
 
 var puzzle,
-    move_num = 0,
     board,
-    game,
-    statusMsg = '',
-    timeouts = [],
-    puzzle_num = parseInt($(location).attr('search').substr(1));
-
-if (isNaN(puzzle_num) || puzzle_num < 0 || puzzle_num >= puzzles.length) puzzle_num = puzzles.length - 1;
-puzzle = puzzles[puzzle_num];
-game = new Chess(puzzle.start);
-
-function clearTimeouts() {
-    for (var i=0; i<timeouts.length; i++) {
-        clearTimeout(timeouts[i]);
-    }
-    timeouts = [];
-}
-
-// do not pick up pieces if the game is over
-// only pick up pieces for the side to move
-var onDragStart = function(source, piece, position, orientation) {
-    if (game.game_over() === true ||
-        (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-        (game.turn() === 'b' && piece.search(/^w/) !== -1) ||
-        move_num >= puzzle.moves.length) {
-    return false;
-    }
-};
-
-var onDrop = function(source, target) {
-    // see if the move is legal
-    correct_move = puzzle.moves[move_num];
-    if (source == target) return 'snapback';
-    if (correct_move.indexOf(source) != 0 || correct_move.indexOf(target) != 3) {
-        $('#msg').text('Incorrect');
-        return 'snapback';
-    }
-    var move = game.move({
-        from: source,
-        to: target,
-        promotion: 'q' // NOTE: always promote to a pawn for example simplicity
-        //TODO: Fix this once I add a puzzle that involves promoting
-    });
-
-    // illegal move
-    if (move === null) return 'snapback';
-
-    move_num++;
-    if (move_num >= puzzle.moves.length) {
-        statusMsg = 'Solved!';
-        if (puzzle.annotation) {
-            statusMsg += '<br>' + puzzle.annotation;
-        }
-    } else {
-        statusMsg = '';
-        var next_move = puzzle.moves[move_num];
-        board.move(next_move);
-        move = game.move({
-            from: next_move.substr(0,2),
-            to: next_move.substr(3,2),
-            promotion: 'q'
-        });
-        move_num++;
-    }
-    updateStatus();
-};
-
-// update the board position after the piece snap 
-// for castling, en passant, pawn promotion
-var onSnapEnd = function() {
-    board.position(game.fen());
-};
+    puzzle_num = -1,
+    answers = [];
 
 var updateStatus = function() {
-    $('#date').text(puzzle.date);
-    if (typeof(puzzle.description) !== 'undefined') $('#description').html(puzzle.description); else $('#description').html('');
-    $('#title').text(puzzle.title);
-    $('#msg').html(statusMsg);
-    if (statusMsg.indexOf('Solved!') == 0) $('#solve').hide();
+    $('#pnumber').text(puzzle_num + 1);
+    $('#players').html('<b>' + puzzle.white + ' vs. ' + puzzle.black  + '</b>');
+    $('#match').text(puzzle.match);
+    $('#description').text(puzzle.description);
 };
 
 var cfg = {
-    draggable: true,
+    draggable: false,
     showNotation: false,
-    position: game.fen(),
-    onDragStart: onDragStart,
-    onDrop: onDrop,
-    onSnapEnd: onSnapEnd
+    position: puzzles[0].start
 };
 board = new ChessBoard('board', cfg);
+load_puzzle();
 
-updateStatus();
-
-function load_puzzle(num) {
-    
-    clearTimeouts();
-    move_num = 0;
-    puzzle_num = num;
-    if (num < 0) puzzle_num = 0;
-    if (num >= puzzles.length) puzzle_num = puzzles.length - 1;
-    puzzle = puzzles[puzzle_num];
-    game.load(puzzle.start);
-    board.position(game.fen(), false);
-    statusMsg = '';
-    $('#solve').show();
-    updateStatus();
+function computeScore() {
+    score = 0;
+    max = 0;
+    for (i = 0; i < answers.length && i < puzzles.length; ++i) {
+        max += 25;
+        if (answers[i] == puzzles[i].correct) score += 25;
+        console.debug(answers[i] + ' ' + puzzles[i].correct);
+    }
+    return parseInt((score / max) * 2500);
 }
 
-$('#first').click(function() {
-    load_puzzle(0);
-});
+function load_puzzle() {
+    puzzle_num += 1;
+    $('#move1').off("click");
+    $('#move2').off("click");
+    $('#move3').off("click");
+    if (puzzle_num >= puzzles.length)  { 
+        $('body').html("<b>Score: " + computeScore()  + "</b>");
+        console.debug(computeScore());
+    } else {
 
-$('#prev').click(function() {
-    load_puzzle(puzzle_num - 1);
-});
-
-$('#next').click(function() {
-    load_puzzle(puzzle_num + 1);
-});
-
-$('#last').click(function() {
-    load_puzzle(puzzles.length - 1);
-});
-
-$('#solve').click(function() {
-    $('#msg').text('');
-    (function() {
-        next_move();
-        function next_move() {
-            if (move_num >= puzzle.moves.length) {
-                statusMsg = 'Solved!';
-                if (puzzle.annotation) {
-                    statusMsg += '<br>' + puzzle.annotation;
-                }
-                updateStatus();
-                return;
-            }
-            board.move(puzzle.moves[move_num]);
-            var move = game.move({
-                from: puzzle.moves[move_num].substr(0,2),
-                to: puzzle.moves[move_num].substr(3,2),
-                promotion: 'q'
-            });
-            move_num++;
-            board.position(game.fen());
-            timeouts.push(setTimeout(next_move, 1000));
-        }
-    })();
-    $('#solve').hide();
-});
+    puzzle = puzzles[puzzle_num];
+    $('#move1').text(puzzle.moves[0]);
+    $('#move2').text(puzzle.moves[1]);
+    $('#move3').text(puzzle.moves[2]);
+    board.position(puzzle.start, false);
+    updateStatus();
+    $('#move1').click(function() {
+        answers.push(1);
+        load_puzzle();
+    });
+    $('#move2').click(function() {
+        answers.push(2);
+        load_puzzle();
+    });
+    $('#move3').click(function() {
+        answers.push(3);
+        load_puzzle();
+    });
+    }
+}
 
 }; // end init()
 $(document).ready(init);
